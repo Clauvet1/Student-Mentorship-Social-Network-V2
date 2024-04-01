@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #6C6969;
+  --background-color: #4CA6C8;
+  --secondaryBb-color: #45261E;
+  --tertiaryBg-color: #E27E1D;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +20,469 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+h1, h2, h3, h4, h5{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.bar{
+  border-radius: 4px black solid;
+  width: 96%;
+  margin: 2em auto;
+}
+#search{
+  background-color: rgba(0, 0, 0, 0.045);
+}
+#navMore{
+  border-left: 2px rgba(0, 0, 0, 0.105) solid;
+  margin: auto;
+}
+li{
+  padding: 0 10px;
+}
+#signUp{
+  border: 2px black solid;
+  padding: 0;
+  width: 6em;
+}
+#signUp :hover{
+  background-color: var(--background-color);
+  color: white;
+  border: 2px white solid;
+}
+
+/* For Home */
+
+.content1{
+  margin: 0 0 0 auto;
+  padding: 2em;
+  border-radius: 1em 0 0 1em;
+  overflow: hidden;
+}
+
+p{
+  color: var(--primary-color);
+}
+.IMG{
+  width: 50%;
+  height: 25vh;
+  border-radius: 60%;
+  overflow: hidden;
+  position: absolute;
+  top: -5em;
+  left: 25%;
+  box-shadow: 1px 4px 10px black;
+}
+.box{
+  box-shadow: 4em -8em 30em var(--background-color);
+  width: 60%;
+  margin: 7em auto;
+  position: relative;
+  border-radius: 25%;
+}
+.boxContent{
+  margin-top: 5.5em;
+}
+.orangeBox{
+  box-shadow: 2px 4px 4px var(--tertiaryBg-color);
+  overflow: visible;
+  width: 75%;
+  padding: 2em;
+  margin-top: 5em;
+  border-radius: 50%;
+}
+.student-mentor-matching{
+  width: 98%;
+  box-shadow: 90px 40px 5em rgba(0, 0, 0, 0.37);
+  margin: 0 0 0 auto;
+  padding: 2em;
+  border-radius: 1em 0 0 1em;
+  overflow: hidden;
+}
+.icon-large{
+  font-size: 2rem;
+  color: var(--background-color);
+  padding-right: 5%;
+}
+.line{
+  margin-left: 1em;
+  margin: 1em;
+  display: flex;
+}
+#IMG-logo{
+  width: 5em;
+}
+.SMM{
+  padding: 8em 0;
+ 
+}
+.IMG-SMM{
+  border-radius: 45%;
+  overflow: hidden;
+  width: 80%;
+}
+.footer{
+  margin-top: 5em;
+  padding: 4em 0;
+  background-color: var(--secondaryBb-color);
+  box-shadow: 90px -40px 5em rgba(0, 0, 0, 0.37);
+  margin: 0 0 0 auto;
+  padding: 2em;
+  overflow: hidden;
+}
+
+/* For AboutUs */
+
+.bottom_text{
+  margin: 0 0 0 auto;
+  background-color: white;
+  color: black;
+  width: 50%;
+  font-size: larger;
+  padding: 1em;
+}
+.box{
+  padding: 2em 0 0 5em;
+}
+.box h1{
+  font-size:5em;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.aboutUscontent1{
+  width: 75%;
+  margin: 2em auto;
+}
+.apply{
+  text-decoration: underline red;
+  margin-top: 2em;
+}
+.aboutUscontent2{
+  position: relative;
+  border: 1px rgb(255, 255, 255) solid;
+}
+.IMG_worker{
+  position: absolute;
+  width: 25em;
+  right: 0;
+  top: 0;
+}
+.bg_red{
+  background-color: var(--tertiaryBg-color);
+  color: white;
+  margin: 4em 8em 4em 4em;
+  padding: 2em 3em;
+}
+.img{
+  width: 100%;
+  height: 100%;
+}
+.IMG_workerB{
+  position: absolute;
+  width: 80%;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+}
+.results{
+  text-align: center;
+  margin-top: 5em;
+}
+.results p{
+  width: 50%;
+  margin: 0 auto 0 auto;
+}
+.imgX{
+  width: 12em;
+  height: 13em;
+  border-radius: 11em;
+  margin: 0 auto 2em 5em;
+}
+.views{
+  width: 80%;
+  margin: 5em auto 0 auto;
+}
+#p_i{
+  display: flex;
+  justify-content: space-around;
+}
+.rec{
+  width: 88%;
+  margin: 2em auto 0 13em;
+}
+
+/* For Mentors */
+
+.mentorIMG{
+  width: 100%;
+  box-shadow: 2px 4px 4px var(--primary-color);
+  border-radius: 2em;
+  overflow: hidden;
+}
+.filter{
+  display: flex;
+}
+#mentorDesc{
+  box-shadow: 2px 2px 4px var(--primary-color);
+  overflow: hidden;
+  border-radius: 2em;
+  padding-left: -2em;
+}
+#shadow{
+  padding: 0 .5em;
+  box-shadow: 0px 2px 4px var(--primary-color);
+  border-radius: 2em;
+  overflow: hidden;
+}
+
+/* For aboutMentor */
+
+.amIMG{
+  width: 100%;
+  height: 14vh;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px var(--primary-color);
+}
+.content5{
+  width: 65%;
+}
+h6 span{
+  color: var(--background-color);
+}
+.icon-small{
+  font-size: 1.1rem;
+  color: var(--background-color);
+  padding-right: 5%;
+  width: 1em;
+}
+.line1{
+  display: flex;
+  font-size: small;
+}
+.skillsBox{
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.055);
+  border-radius: 20px;
+}
+.skillsBox p{
+  color: black;
+}
+.messageMentor{
+  margin-top: 2em;
+  background-color: rgba(0, 0, 0, 0.055);
+  padding: 1em;
+  border-radius: 1em;
+}
+#messagebtn{
+  background-color: var(--background-color);
+}
+
+/* For mentee Profile */
+
+.mentee-profile-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-details h1 {
+  margin-bottom: 10px;
+}
+
+.profile-details h2 {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin-top: 5px;
+}
+
+p {
+  margin-top: 5px;
+}
+
+/* For Login */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.user-type {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+
+button.active {
+  background-color: var(--background-color);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  margin: 2em;
+  background-color: #118578;
+  color: #fff;
+  cursor: pointer;
+}
+.loginLinks{
+  color: #118578;
+  font-weight: bold;
+}
+
+/* For the FAQ */
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.faq-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  font-weight: bold;
+}
+
+.faq-answer {
+  margin-top: 10px;
+}
+
+/* For resources */
+
+.resources-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.resource-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.resource-card h2 {
+  margin-bottom: 10px;
+}
+
+.resource-card p {
+  margin-bottom: 10px;
+}
+
+.resource-card a {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* For schedule */
+
+.meeting-scheduler-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.meeting-form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+/* For feedback */
+
+.feedback-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  margin-top: 5px;
 }
