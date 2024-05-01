@@ -1,0 +1,27 @@
+[debug] [2024-05-01T22:06:58.073Z] ----------------------------------------------------------------------
+[debug] [2024-05-01T22:06:58.076Z] Command:       C:\np\node.exe C:\Users\monga\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-05-01T22:06:58.077Z] CLI Version:   13.7.5
+[debug] [2024-05-01T22:06:58.077Z] Platform:      win32
+[debug] [2024-05-01T22:06:58.078Z] Node Version:  v18.13.0
+[debug] [2024-05-01T22:06:58.079Z] Time:          Wed May 01 2024 23:06:58 GMT+0100 (West Africa Standard Time)
+[debug] [2024-05-01T22:06:58.079Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-01T22:06:58.084Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2024-05-01T22:06:58.099Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-01T22:06:58.100Z] > authorizing via signed-in user (mongambac@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\School\Final-Year-Project\SM-Project
+
+[warn] !  Unable to fetch the CLI MOTD and remote config. This is not a fatal error, but may indicate an issue with your network connection. 
+[debug] [2024-05-01T22:07:19.282Z] Failed to fetch MOTD FirebaseError: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'TLSSocket'
+    |     property '_httpMessage' -> object with constructor 'ClientRequest'
+    --- property 'socket' closes the circle
