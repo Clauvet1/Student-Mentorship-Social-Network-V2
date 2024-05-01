@@ -14,8 +14,9 @@ import Signup from './Signup';
 import MentorProfile from './mentor pages/mentorProfile';
 import FAQ from './FAQ';
 import Resources from './mentor pages/resources';
-import MeetingScheduler from './mentor pages/schedule';
 import Feedback from './feedback';
+import Mentees from './mentor pages/mentees';
+import Message from './message';
 
 // import Button from 'react-bootstrap/Button';
 
@@ -64,11 +65,14 @@ function App() {
             <Route path="/resources">
               <Resources />
             </Route>
-            <Route path="/meetingScheduler">
-              <MeetingScheduler />
+            <Route path="/mentees">
+              <Mentees />
             </Route>
             <Route path="/feedback">
               <Feedback />
+            </Route>
+            <Route path="/message">
+              <Message/>
             </Route>
           </Switch>
         </div>

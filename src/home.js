@@ -1,7 +1,8 @@
 import user1 from './assets/images/pic.jpg'
-import SMM from './assets/images/peaple-connect.png'
+import SMM from './assets/images/peaple-connect.png'    
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLanguage, faMapLocation, faCalendarWeek, faCircleNodes } from '@fortawesome/free-solid-svg-icons'
+import { faLanguage, faMapLocation, faCalendarWeek, faCircleNodes, faNoteSticky, faCalendarCheck, faCheck, faCheckDouble} from '@fortawesome/free-solid-svg-icons'
+import { faFacebookMessenger} from '@fortawesome/free-brands-svg-icons'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 const Home = () => {
     return ( 
@@ -27,7 +28,6 @@ const Home = () => {
                                 <h3 className='pb-5'>Scholar Institute</h3>
                                 </center>
                             </div>
-                            
                         </div>
                     </div>
                 </div>
@@ -56,6 +56,26 @@ const Home = () => {
                     <div className="col-lg-6 col-md-6 col-sm-12">
                         <div className="IMG-SMM mx-auto">
                             <img className='w-100' src={SMM} alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="student-mentor-matching pt-5">
+                <div className="row">
+                    <div className="col-lg-6 col-md-6 col-sm-12">
+                        <div className="IMG-SMM mx-auto">
+                            <img className='w-100' src={SMM} alt="" />
+                        </div>
+                    </div>
+                    <div className="SMM col-lg-6 col-md-6 col-sm-12">
+                        <h2 className='fw-bold my-4'>Message your mentor</h2>
+                        <div className="line">
+                        <FontAwesomeIcon className='icon-large' icon={faFacebookMessenger} />
+                        <p>Send messages to either mentees or mentors. Access yoyr messages at any time from your desktop or mobile device</p>
+                        </div>
+                        <div className="line">
+                        <FontAwesomeIcon className='icon-large' icon={faCheckDouble} />
+                        <p>Share an agenda with topic to discuss, also share resources with mentees</p>
                         </div>
                     </div>
                 </div>
