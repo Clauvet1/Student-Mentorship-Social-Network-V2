@@ -1,3 +1,5 @@
+import { AuthProvider } from './AuthContext';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Navbar from './components/Navbar';
@@ -27,6 +29,7 @@ import Message from './message';
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
         <div className="App">
         <Navbar />
@@ -79,6 +82,7 @@ function App() {
         <Footer />
         </div>
     </Router>
+    </AuthProvider>
   );
 }
 

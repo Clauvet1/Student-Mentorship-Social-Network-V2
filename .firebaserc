@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "your-project-id"
+  },
+  "targets": {
+    "your-project-id": {
+      "hosting": {
+        "public": "public",
+        "ignore": [
+          "**/*.js",
+          "**/*.ts",
+          "**/*.json",
+          "**/*.env"
+        ]
+      }
+    }
+  }
+}
