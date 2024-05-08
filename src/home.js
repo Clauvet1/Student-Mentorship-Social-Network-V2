@@ -2,7 +2,7 @@ import user1 from './assets/images/pic.jpg'
 import Messaging from './assets/images/messaging.jpg'
 import SMM from './assets/images/peaple-connect.png'    
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLanguage, faMapLocation, faCalendarWeek, faCircleNodes, faNoteSticky, faCalendarCheck, faCheck, faCheckDouble} from '@fortawesome/free-solid-svg-icons'
+import { faLanguage, faMapLocation, faCalendarWeek, faCircleNodes, faCheckDouble} from '@fortawesome/free-solid-svg-icons'
 import { faFacebookMessenger} from '@fortawesome/free-brands-svg-icons'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 const Home = () => {

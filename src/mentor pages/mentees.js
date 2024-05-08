@@ -1,6 +1,5 @@
 import React from 'react';
 import user1 from '../assets/images/pic.jpg';
-import SMM from '../assets/images/peaple-connect.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';

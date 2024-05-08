@@ -82,7 +82,7 @@ const MentorProfile = () => {
                         <p>You can edit your profile here</p>
                     </div>
                     <div className="col-lg-4">
-                        <a id='messagebtn' className='btn rounded-5 text-white mt-3 ms-4' href='#'>Edit Profile</a>
+                        <Link id='messagebtn' className='btn rounded-5 text-white mt-3 ms-4' to='/editMProfile'>Edit Profile</Link>
                     </div>
                 </div>
                 <div className="row">

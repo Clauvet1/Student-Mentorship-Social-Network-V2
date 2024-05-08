@@ -1,5 +1,3 @@
-import { AuthProvider } from './AuthContext';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Navbar from './components/Navbar';
@@ -19,6 +17,9 @@ import Resources from './mentor pages/resources';
 import Feedback from './feedback';
 import Mentees from './mentor pages/mentees';
 import Message from './message';
+import { UserProvider } from './Usercontext';
+import EditMProfile from './mentor pages/EditMProfile';
+
 
 // import Button from 'react-bootstrap/Button';
 
@@ -29,7 +30,7 @@ import Message from './message';
 
 function App() {
   return (
-    <AuthProvider>
+    <UserProvider>
     <Router>
         <div className="App">
         <Navbar />
@@ -77,12 +78,15 @@ function App() {
             <Route path="/message">
               <Message/>
             </Route>
+            <Route path="/editMProfile">
+              <EditMProfile/>
+            </Route>
           </Switch>
         </div>
         <Footer />
         </div>
     </Router>
-    </AuthProvider>
+    </UserProvider>
   );
 }
 
