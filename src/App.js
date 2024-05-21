@@ -6,8 +6,7 @@ import AboutUs from './aboutUs';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom/';
 import Home from './home';
 import Testimonials from './testimonials';
-import Mentors from './mentors';
-import AboutMentor from './aboutMentor';
+import Mentors from './mentee pages/mentors';
 import MenteeProfile from './mentee pages/menteeProfile';
 import Login from './Login';
 import Signup from './Signup';
@@ -47,9 +46,6 @@ function App() {
             </Route>
             <Route path="/mentors">
               <Mentors />
-            </Route>
-            <Route path="/aboutMentor">
-              <AboutMentor />
             </Route>
             <Route path="/login">
               <Login />

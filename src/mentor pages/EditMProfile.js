@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const EditMProfile = () => {
+    const [userType, setUserType] = useState("mentor");
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
+    const [location, setLocation] = useState('');
     const [phone, setPhone] = useState('');
     const [language, setLanguage] = useState('');
     const [school, setSchool] = useState('');
@@ -11,9 +13,14 @@ const EditMProfile = () => {
     const [bio, setBio] = useState('');
     const history = useHistory();
 
+
+    const handleUserTypeChange = (type) => {
+        setUserType(type);
+      };
+
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const userData = {fullName, email, phone, language, school, specialty, bio};
+        const userData = {fullName, email, phone, language, school, specialty, bio, userType, location};
         console.log('User data:', userData);
         try {
             const response = await fetch("http://localhost:3001/upload", {
@@ -25,7 +32,11 @@ const EditMProfile = () => {
             });
             if (response.ok) {
                 console.log("User data sent successfully to server");
+                if(userType === 'mentee'){
+                    history.push("/menteeProfile");
+                } else{
                 history.push("/mentorProfile");
+                }
             } else {
                 console.log("Failed to send user's data to server")
             }
@@ -36,8 +47,13 @@ const EditMProfile = () => {
 
     return (
         <div className="container mt-5">
-            <h2 className="mb-4">Edit Profile</h2>
+            
             <center>
+            <h2 className="mb-4">Edit Profile</h2>
+            <div className="">
+        <button className={userType === "mentor"? "active" : ""} onClick={() => handleUserTypeChange("mentor")}> Mentor </button>
+        <button className={userType === "mentee"? "active" : ""} onClick={() => handleUserTypeChange("mentee")}> Mentee </button>
+      </div>
                 <form onSubmit={handleSubmit} id='editP' className='col-lg-6 rounded-3 shadow-lg mb-5'>
                 <div className="mb-3">
                         <label htmlFor="fullName" className="form-label">Full Name</label>
@@ -54,6 +70,10 @@ const EditMProfile = () => {
                     <div className="mb-3">
                         <label htmlFor="language" className="form-label">Language</label>
                         <input type="text" className="form-control" id="language" value={language} onChange={(e) => setLanguage(e.target.value)} />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="language" className="form-label">Location</label>
+                        <input type="text" className="form-control" id="language" value={location} onChange={(e) => setLocation(e.target.value)} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="school" className="form-label">School</label>

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import profileA from './assets/images/profilA.jpg';
-import profileB from './assets/images/profileB.jpg';
-import profileC from './assets/images/profileC.jpg';
-import profileD from './assets/images/profileD.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import profileA from '../assets/images/profilA.jpg';
+import profileB from '../assets/images/profileB.jpg';
 
-const mentorImages = [profileA, profileB, profileC, profileD];
+const mentorImages = [profileA, profileB];
 
 const Mentors = () => {
   const [mentorData, setMentorData] = useState([]);
@@ -43,7 +43,7 @@ const Mentors = () => {
               <div className="col-lg-3">
                 <div id="shadow">
                   <div className="mentorIMG">
-                    <img className='w-100' src={mentorImages[Math.floor(Math.random() * mentorImages.length)]} alt={mentor.fullName} />
+                    <img className='w-100 H-100' src={mentorImages[Math.floor(Math.random() * mentorImages.length)]} alt={mentor.fullName} />
                     <div className="placeholder-image"></div>
                   </div>
                 </div>
@@ -53,9 +53,12 @@ const Mentors = () => {
                     <h2>{mentor.fullName}</h2>
                     <h5>{mentor.specialty}</h5>
                     <p>{mentor.bio}</p>
-                    <Link to={`/aboutMentor/${mentor.id}`}>
+                    <Link to={`/mentorProfile/${mentor.id}`}>
                       <button className='btn bg-black text-white rounded-5 px-4 mt-2'>View Profile</button>
                     </Link>
+                    <button className="btn btn-secondary rounded-5 text-white ms-2 mt-2 ml-3">
+                    <FontAwesomeIcon icon={faEnvelope} /> Message
+                  </button>
                 </div>
               </div>
             </div>
