@@ -23,7 +23,7 @@ const EditMProfile = () => {
         const userData = {fullName, email, phone, language, school, specialty, bio, userType, location};
         console.log('User data:', userData);
         try {
-            const response = await fetch("http://localhost:3001/upload", {
+            const response = await fetch("http://localhost:3001/api/editProfile", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
