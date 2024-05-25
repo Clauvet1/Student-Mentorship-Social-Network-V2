@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/sm1.png";
+import { useHistory } from "react-router-dom";
 import { UserContext } from "../Usercontext";
 
 const Navbar = () => {
-  const { isLoggedIn, setIsLoggedIn } = useContext(UserContext);
+  const { isLoggedIn, logout } = useContext(UserContext);
+  const history = useHistory();
 
   const handleLogout = async () => {
     try {
@@ -14,12 +16,11 @@ const Navbar = () => {
           'Content-Type': 'application/json'
         }
       });
-  
-      if (response.ok) {
 
-        setIsLoggedIn(false);
-        // Redirect the user to the login page or any other page you want
-        window.location.href = '/login';
+      if (response.ok) {
+        logout();
+        localStorage.removeItem("token");
+        history.push("/login");
       } else {
         throw new Error('Logout failed');
       }

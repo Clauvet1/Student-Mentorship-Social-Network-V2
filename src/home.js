@@ -62,7 +62,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="student-mentor-matching pt-5">
-                <div className="row">
+                <div className="row my-4">
                     <div className="col-lg-6 col-md-6 col-sm-12">
                         <div className="IMG-SMM mx-auto">
                             <img className='w-100' src={Messaging} alt="" />

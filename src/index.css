@@ -53,7 +53,7 @@ li{
 /* For Home */
 
 .content1{
-  margin: 0 0 0 auto;
+  margin: 0 0 3em auto;
   padding: 2em;
   border-radius: 1em 0 0 1em;
   overflow: hidden;
@@ -92,7 +92,7 @@ p{
 }
 .student-mentor-matching{
   width: 98%;
-  box-shadow: 90px 40px 5em rgba(0, 0, 0, 0.251);
+  box-shadow: 90px 5px 20px rgba(0, 0, 0, 0.251);
   margin: 0 0 0 auto;
   padding: 2em;
   border-radius: 1em 0 0 1em;
@@ -124,7 +124,6 @@ p{
   margin-top: 5em;
   padding: 4em 0;
   background-color: var(--secondaryBb-color);
-  box-shadow: 90px -40px 5em rgba(0, 0, 0, 0.37);
   margin: 0 0 0 auto;
   padding: 2em;
   overflow: hidden;
