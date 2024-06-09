@@ -1,36 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import {  addDoc, collection, onSnapshot, orderBy, query } from "firebase/firestore";
-import { db } from "./firebase.config";
 
 function Message() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
+  const [sender, setSender] = useState(''); // assume sender is the current user's ID
+  const [receiver, setReceiver] = useState('mentor'); // assume receiver is the mentor's ID
 
   useEffect(() => {
-    const q = query(collection(db, 'messages'), orderBy('timestamp'));
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      const messages = [];
-      snapshot.forEach((doc) => {
-        messages.push({
-          id: doc.id,
-          from: doc.data().from,
-          text: doc.data().text,
-          timestamp: doc.data().timestamp.toDate(),
-        });
-      });
-      setMessages(messages);
-    });
-
-    return () => unsubscribe();
+    // fetch messages from /messages endpoint
+    fetch('http://localhost:3001/api/messages')
+     .then(response => response.json())
+     .then(data => setMessages(data))
+     .catch(error => console.error('Error:', error));
   }, []);
 
   const handleSendMessage = async () => {
-    await addDoc(collection(db, 'messages'), {
-      from: 'me',
-      text: newMessage,
-      timestamp: new Date(),
-    });
-    setNewMessage('');
+    // send message to /send-message endpoint
+    try {
+      const response = await fetch('http://localhost:3001/api/send-message', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sender, receiver, text: newMessage }),
+      });
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      setNewMessage('');
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
@@ -39,12 +37,12 @@ function Message() {
         <h2>Chat with Mentor</h2>
       </div>
       <div className="chat-history">
-        {messages.map((message, index) => (
-          <div key={index} className={`message ${message.from === 'me' ? 'sent' : 'received'}`}>
-            <p>{message.text}</p>
-            <span>{message.timestamp.toLocaleTimeString()}</span>
-          </div>
-        ))}
+            {messages.map((message, index) => (
+        <div key={index} className={`message ${message.sender === sender ? 'sent' : 'received'}`}>
+          <p>{message.text}</p>
+          <span>{new Date(message.timestamp).toLocaleTimeString()}</span>
+        </div>
+             ))}
       </div>
       <div className="message-input">
         <input

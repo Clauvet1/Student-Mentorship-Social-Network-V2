@@ -15,7 +15,6 @@ const UserProvider = ({ children }) => {
   const login = () => {
     setIsLoggedIn(true);
   };
-
   const logout = () => {
     setIsLoggedIn(false);
     localStorage.removeItem("token");

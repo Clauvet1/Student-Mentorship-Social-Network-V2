@@ -18,6 +18,7 @@ import Mentees from './mentor pages/mentees';
 import Message from './message';
 import { UserProvider } from './Usercontext';
 import EditMProfile from './mentor pages/EditMProfile';
+import EditMenteeProfile from './mentee pages/EditMenteeProfile';
 
 
 // import Button from 'react-bootstrap/Button';
@@ -76,6 +77,9 @@ function App() {
             </Route>
             <Route path="/editMProfile">
               <EditMProfile/>
+            </Route>
+            <Route path="/editMenteeProfile">
+              <EditMenteeProfile/>
             </Route>
           </Switch>
         </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import React, { useContext } from "react";
@@ -10,6 +10,7 @@ const Login = () => {
   const [userType, setUserType] = useState("mentor");
   const history = useHistory();
   const { login } = useContext(UserContext);
+  
 
   const handleUserTypeChange = (type) => {
     setUserType(type);
@@ -17,18 +18,19 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     try {
       const response = await fetch("http://localhost:3001/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ email, password, userType })
+        body: JSON.stringify({ email, password, userType }),
+       
       });
-
+  
       const data = await response.json();
-
+  
       if (data.success) {
         // Save the custom token to local storage
         localStorage.setItem("token", data.token);
@@ -39,6 +41,8 @@ const Login = () => {
         } else {
           history.push("/menteeProfile");
         }
+  
+       
       } else {
         alert(data.message);
       }

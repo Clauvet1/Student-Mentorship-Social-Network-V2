@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const EditMProfile = () => {
+const EditMenteeProfile = () => {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [location, setLocation] = useState('');
@@ -24,8 +24,8 @@ const EditMProfile = () => {
                 history.push("/login");
                 console.log("token missing");
             }
-            const response = await fetch("http://localhost:3001/api/editMProfile", {
-                method: "POST",
+            const response = await fetch("http://localhost:3001/api/editMenteeProfile", {
+                method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${token}`
@@ -34,8 +34,8 @@ const EditMProfile = () => {
             });
             if (response.ok) {
                 console.log("User data sent successfully to server");
-                
-                history.push("/mentorProfile");
+               
+                history.push("/menteeProfile");
                 
             } else {
                 console.log("Failed to send user's data to server")
@@ -54,11 +54,11 @@ const EditMProfile = () => {
                 <form onSubmit={handleSubmit} id='editP' className='col-lg-6 rounded-3 shadow-lg mb-5'>
                 <div className="mb-3">
                         <label htmlFor="fullName" className="form-label">Full Name</label>
-                        <input type="text" className="form-control" id="fullName" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
+                        <input type="text" className="form-control" id="fullName" value={fullName} onChange={(e) => setFullName(e.target.value)} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email</label>
-                        <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                        <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="phone" className="form-label">Phone</label>
@@ -92,4 +92,4 @@ const EditMProfile = () => {
     );
 };
 
-export default EditMProfile;
+export default EditMenteeProfile;

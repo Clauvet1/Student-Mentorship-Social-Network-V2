@@ -47,10 +47,7 @@ useEffect(() => {
                   <Link to={`/menteeProfile/${mentee.id}`}>
                     <button className="btn bg-black rounded-5 text-white">View Profile</button>
                   </Link>
-                  <button className="btn btn-secondary rounded-5 text-white ml-3">
-                    <FontAwesomeIcon icon={faEnvelope} /> Message
-                  </button>
-                  <Link to="/message">message</Link>
+                  <Link className="btn btn-secondary rounded-5 text-white ms-2 mt-2 ml-3" to={`/message/${mentee.id}`}><FontAwesomeIcon icon={faEnvelope} /> message</Link>
                 </div>
               </div>
             </div>
