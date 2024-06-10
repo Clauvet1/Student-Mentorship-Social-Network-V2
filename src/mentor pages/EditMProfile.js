@@ -8,6 +8,8 @@ const EditMProfile = () => {
     const [phone, setPhone] = useState('');
     const [language, setLanguage] = useState('');
     const [school, setSchool] = useState('');
+    const [department, setDepartment] = useState('');
+    const [skills, setSkills] = useState('');
     const [specialty, setspecialty] = useState('');
     const [bio, setBio] = useState('');
     const history = useHistory();
@@ -15,7 +17,7 @@ const EditMProfile = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const userData = {fullName, email, phone, language, school, specialty, bio, location};
+        const userData = {fullName, email, phone, language, school, specialty, bio, location, skills, department};
         console.log('User data:', userData);
         try {
 
@@ -54,11 +56,11 @@ const EditMProfile = () => {
                 <form onSubmit={handleSubmit} id='editP' className='col-lg-6 rounded-3 shadow-lg mb-5'>
                 <div className="mb-3">
                         <label htmlFor="fullName" className="form-label">Full Name</label>
-                        <input type="text" className="form-control" id="fullName" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
+                        <input type="text" className="form-control" id="fullName" value={fullName} onChange={(e) => setFullName(e.target.value)} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email</label>
-                        <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                        <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="phone" className="form-label">Phone</label>
@@ -77,8 +79,16 @@ const EditMProfile = () => {
                         <input type="text" className="form-control" id="school" value={school} onChange={(e) => setSchool(e.target.value)} />
                     </div>
                     <div className="mb-3">
+                        <label htmlFor="school" className="form-label">Department</label>
+                        <input type="text" className="form-control" id="school" value={department} onChange={(e) => setDepartment(e.target.value)} />
+                    </div>
+                    <div className="mb-3">
                         <label htmlFor="specialty" className="form-label">specialty</label>
                         <input type="text" className="form-control" id="specialty" value={specialty} onChange={(e) => setspecialty(e.target.value)} />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="specialty" className="form-label">Skills</label>
+                        <input type="text" className="form-control" id="specialty" value={skills} onChange={(e) => setSkills(e.target.value)} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="bio" className="form-label">Bio</label>

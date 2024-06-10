@@ -72,7 +72,7 @@ function App() {
             <Route path="/feedback">
               <Feedback />
             </Route>
-            <Route path="/message">
+            <Route path="/message/:id">
               <Message/>
             </Route>
             <Route path="/editMProfile">

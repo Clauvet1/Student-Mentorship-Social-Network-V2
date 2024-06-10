@@ -646,3 +646,62 @@ textarea {
   background-color: rgba(0, 0, 0, 0.045); 
   padding: 2em 2em;
 }
+
+/* For Message */
+
+.chat-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.chat-body {
+  padding: 20px;
+}
+
+.messages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sent {
+  background-color: #4CAF50;
+  color: #fff;
+  text-align: right;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.received {
+  background-color: #fff;
+  color: #333;
+  text-align: left;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.chat-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}

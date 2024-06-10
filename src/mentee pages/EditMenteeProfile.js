@@ -9,13 +9,15 @@ const EditMenteeProfile = () => {
     const [language, setLanguage] = useState('');
     const [school, setSchool] = useState('');
     const [specialty, setspecialty] = useState('');
+    const [skills, setSkills] = useState('');
+    const [department, setDepartment] = useState('');
     const [bio, setBio] = useState('');
     const history = useHistory();
 
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const userData = {fullName, email, phone, language, school, specialty, bio, location};
+        const userData = {fullName, email, phone, language, school, specialty, bio, department, skills, location};
         console.log('User data:', userData);
         try {
 
@@ -77,8 +79,16 @@ const EditMenteeProfile = () => {
                         <input type="text" className="form-control" id="school" value={school} onChange={(e) => setSchool(e.target.value)} />
                     </div>
                     <div className="mb-3">
+                        <label htmlFor="school" className="form-label">Department</label>
+                        <input type="text" className="form-control" id="school" value={department} onChange={(e) => setDepartment(e.target.value)} />
+                    </div>
+                    <div className="mb-3">
                         <label htmlFor="specialty" className="form-label">specialty</label>
                         <input type="text" className="form-control" id="specialty" value={specialty} onChange={(e) => setspecialty(e.target.value)} />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="specialty" className="form-label">Skills</label>
+                        <input type="text" className="form-control" id="specialty" value={skills} onChange={(e) => setSkills(e.target.value)} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="bio" className="form-label">Bio</label>
