@@ -4,6 +4,8 @@ import Pusher from 'pusher-js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaperPlane} from '@fortawesome/free-solid-svg-icons'
 
 const pusher = new Pusher("1816841", {
   key: "fdbc9ff346ce4463966c",
@@ -31,7 +33,7 @@ const MessageBoard = () => {
 
     const fetchMessages = async () => {
       try {
-        const receivedResponse = await fetch(`http://localhost:3001/api/messages/received`, {
+        const receivedResponse = await fetch(`http://localhost:3001/api/messages/received/${recipientId}`, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -79,10 +81,18 @@ const MessageBoard = () => {
     }
   };
 
+  const formatTimestamp = (timestamp) => {
+    return new Intl.DateTimeFormat('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    }).format(new Date(timestamp));
+  };
+
   return (
     <div className="container">
-      <div className="row">
-        <div className="col-md-6">
+      <div className="row mt-5">
+        <div className="col-md-6 col-md-6 col-sm-6 col-xs-6">
           <div className="chat-header">
             <h1>Received Messages</h1>
           </div>
@@ -90,13 +100,14 @@ const MessageBoard = () => {
             <ul className="messages">
               {receivedMessages.map((message, index) => (
                 <li key={index} className="received">
-                  <span>{message.message}</span>
+                  <span>{message.message}</span> <br/>
+                  <span className="timestamp">{formatTimestamp(message.timestamp)}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 col-md-6 col-md-6 col-sm-6 col-xs-6">
           <div className="chat-header">
             <h1>Sent Messages</h1>
           </div>
@@ -104,7 +115,8 @@ const MessageBoard = () => {
             <ul className="messages">
               {sentMessages.map((message, index) => (
                 <li key={index} className="sent">
-                  <span>{message.message}</span>
+                  <span>{message.message}</span> <br/>
+                  <span className="timestamp">{formatTimestamp(message.timestamp)}</span>
                 </li>
               ))}
             </ul>
@@ -121,8 +133,8 @@ const MessageBoard = () => {
               placeholder="Type a message..."
               className="form-control"
             />
-            <button onClick={handleSendMessage} className="btn btn-primary">
-              Send
+            <button onClick={handleSendMessage} className="btn">
+            <FontAwesomeIcon className='icon-large' icon={faPaperPlane} />
             </button>
           </div>
         </div>

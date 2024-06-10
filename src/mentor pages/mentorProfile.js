@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLanguage, faLocationDot, faPhone, faVoicemail, faEdit} from '@fortawesome/free-solid-svg-icons'
-import amIMG from '../assets/images/profileB.jpg';
+import amIMG from '../assets/images/female.png';
 import { useHistory } from "react-router-dom";
 
 const MenteeProfile = () => {

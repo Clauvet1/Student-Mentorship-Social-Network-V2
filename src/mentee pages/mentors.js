@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import profileA from '../assets/images/profilA.jpg';
-import profileB from '../assets/images/profileB.jpg';
+import profileA from '../assets/images/computer.png';
+import profileB from '../assets/images/female.png';
 
 const mentorImages = [profileA, profileB];
 
@@ -51,10 +51,10 @@ const Mentors = () => {
               <div className="col-lg-9 p-4">
                 <div className="container">
                     <h2>{mentor.fullName}</h2>
-                    <h5>{mentor.specialty}</h5>
+                    <h5 className="mColor">{mentor.specialty}</h5>
                     <p>{mentor.bio}</p>
                     <Link to={`/mentorProfile/${mentor.id}`}>
-                      <button className='btn bg-black text-white rounded-5 px-4 mt-2'>View Profile</button>
+                      <button id='mView' className='btn text-white rounded-5 px-4 mt-2'>View Profile</button>
                     </Link>
                   <Link className="btn btn-secondary rounded-5 text-white ms-2 mt-2 ml-3" to={`/message/${mentor.id}`}><FontAwesomeIcon icon={faEnvelope} /> message</Link>
                 </div>

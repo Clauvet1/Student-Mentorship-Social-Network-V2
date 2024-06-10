@@ -237,6 +237,12 @@ p{
   border-radius: 2em;
   overflow: hidden;
 }
+.mColor{
+  color: var(--background-color);
+}
+#mView{
+  background-color: var(--background-color);
+}
 
 /* For aboutMentor */
 
@@ -650,14 +656,17 @@ textarea {
 /* For Message */
 
 .chat-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.045);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.289);
+  border-radius: 10em;
+  color: black;
+  padding: 10px 10px 10px 50px;
   text-align: center;
 }
 
 .chat-body {
   padding: 20px;
+  height: 40vh;
 }
 
 .messages {
@@ -671,22 +680,28 @@ textarea {
   color: #fff;
   text-align: right;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5em 0 1em 0;
+  align-content: end;
 }
 
 .received {
-  background-color: #fff;
-  color: #333;
+  background-color: var(--background-color);
+  color: #fff;
   text-align: left;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 0 4em 0 2em;
+  align-content: end;
 }
 
 .chat-footer {
-  background-color: #333;
+  background-color: var(--secondaryBb-color);
   color: #fff;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
+  border-radius: 2em;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
+  display: flex;
 }
 
 .form-control {
@@ -698,10 +713,14 @@ textarea {
 }
 
 .btn {
-  background-color: #4CAF50;
-  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+}
+.timestamp{
+  background-color: #6C6969;
+  padding: 2px;
+  border-radius: 8px;
+  margin-left: 18px;
 }
