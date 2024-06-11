@@ -53,7 +53,7 @@ const Mentors = () => {
                     <h2>{mentor.fullName}</h2>
                     <h5 className="mColor">{mentor.specialty}</h5>
                     <p>{mentor.bio}</p>
-                    <Link to={`/mentorProfile/${mentor.id}`}>
+                    <Link to={`/mentorProfileView/${mentor.id}`}>
                       <button id='mView' className='btn text-white rounded-5 px-4 mt-2'>View Profile</button>
                     </Link>
                   <Link className="btn btn-secondary rounded-5 text-white ms-2 mt-2 ml-3" to={`/message/${mentor.id}`}><FontAwesomeIcon icon={faEnvelope} /> message</Link>

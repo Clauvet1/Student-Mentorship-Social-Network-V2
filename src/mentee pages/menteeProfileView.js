@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLanguage, faLocationDot, faPhone, faVoicemail, faEdit} from '@fortawesome/free-solid-svg-icons'
+import { faLanguage, faLocationDot, faMessage, faPhone, faVoicemail} from '@fortawesome/free-solid-svg-icons'
 import amIMG from '../assets/images/female.png';
 import { useHistory } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
-const MentorProfile = () => {
+const MentorProfileView = () => {
     const [userData, setUserData] = useState("");
     const history = useHistory();
+    const {id: menteeId} = useParams();
 
     useEffect(() => {
         fetchProfileData();
@@ -15,18 +17,11 @@ const MentorProfile = () => {
 
     const fetchProfileData = async () => {
         try {
-            const token = localStorage.getItem("token");
 
-            if (!token) {
-                history.push("/login");
-                console.log("token missing");
-            }
-
-            const response = await fetch("http://localhost:3001/api/mentor-profile", {
+            const response = await fetch(`http://localhost:3001/api/mentee-profile-view/${menteeId}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`,
                 },
             });
 
@@ -91,14 +86,14 @@ const MentorProfile = () => {
                 <div className="messageMentor">
                     <div className="row">
                         <div className="col-lg-2">
-                            <FontAwesomeIcon className='icon-large w-100 mt-3 mb-2' icon={faEdit} />
+                            <FontAwesomeIcon className='icon-large w-100 mt-3 mb-2' icon={faMessage} />
                         </div>
                         <div className='col-lg-6'>
-                            <h4>Edit Profile</h4>
-                            <p>You can edit your profile here</p>
+                            <h4>Message mentee</h4>
+                            <p>You can Communicate with mentee from here</p>
                         </div>
                         <div className="col-lg-4">
-                            <Link id='messagebtn' className='btn rounded-5 text-white mt-3 ms-4' to = '/editMprofile'>Edit Profile</Link>
+                            <Link id='messagebtn' className='btn rounded-5 text-white mt-3 ms-4' to = {`/message/${userData.id}`}>Message Mentee</Link>
                         </div>
                     </div>
                 </div>
@@ -107,4 +102,4 @@ const MentorProfile = () => {
     );
 };
 
-export default MentorProfile;
+export default MentorProfileView;

@@ -44,7 +44,7 @@ useEffect(() => {
                   <h4 className=" fw-bold mb-3">{mentee.fullName}</h4>
                   <h5 className="mb-3 mColor">{mentee.speciality}</h5>
                   <p className="mb-3">{mentee.bio}</p>
-                  <Link to={`/menteeProfile/${mentee.id}`}>
+                  <Link to={`/menteeProfileView/${mentee.id}`}>
                   <button id='mView' className='btn text-white rounded-5 px-4 mt-2'>View Profile</button>
                   </Link>
                   <Link className="btn btn-secondary rounded-5 text-white ms-2 mt-2 ml-3" to={`/message/${mentee.id}`}><FontAwesomeIcon icon={faEnvelope} /> message</Link>

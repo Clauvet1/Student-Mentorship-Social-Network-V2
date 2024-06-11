@@ -33,7 +33,7 @@ const MenteeProfile = () => {
             });
 
             if (!response.ok) {
-              console.lod("Response error")
+              console.log("Response error")
             } else {
                 const data = await response.json();
                 setUserData(data);

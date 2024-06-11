@@ -40,16 +40,26 @@ li{
   padding: 0 10px;
 }
 #signUp{
-  border: 2px black solid;
+  border: 2px var(--background-color) solid;
   padding: 0;
   width: 6em;
+  color: var(--background-color);
 }
 #signUp :hover{
   background-color: var(--background-color);
   color: white;
   border: 2px white solid;
 }
-
+#logout{
+  color: var(--background-color);
+}
+#logout:hover{
+  color: red;
+  text-shadow: 1px 1px 1px rgba(121, 121, 121, 0.395);
+}
+#link-color{
+  color: var(--background-color);
+}
 /* For Home */
 
 .content1{
