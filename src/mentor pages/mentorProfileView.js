@@ -38,10 +38,10 @@ const MentorProfileView = () => {
 
     return (
         <div className="container mt-5">
-            <div className="content5 p-4 mb-5">
-                <div className="col-lg-2 col-sm-5 col-xs-4">
-                    <div className="amIMG">
-                        <img className='w-100' src={amIMG} alt="" />
+            <div className="col-lg-8 col-md-8 col-sm-10 col-xs-6 p-4 mb-5">
+                <div className="col-lg-4 col-md-8 col-sm-8 col-xs-4">
+                    <div className="amIMG w-50">
+                        <img className='w-100' src={amIMG} alt="profileImage" />
                     </div>
                 </div>
                 <div className="row mt-4">

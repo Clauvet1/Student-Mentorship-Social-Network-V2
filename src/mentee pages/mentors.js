@@ -4,14 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import profileA from '../assets/images/computer.png';
 import profileB from '../assets/images/female.png';
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const mentorImages = [profileA, profileB];
 
 const Mentors = () => {
   const [mentorData, setMentorData] = useState([]);
   const [error, setError] = useState(null);
+  const token = localStorage.getItem('token');
+  const history = useHistory();
 
   useEffect(() => {
+    if(!token){
+      history.push('./login');
+    }
     const fetchMentorData = async () => {
       try {
         const response = await fetch('http://localhost:3001/api/mentors');
@@ -27,7 +33,7 @@ const Mentors = () => {
     };
 
     fetchMentorData();
-  }, []);
+  }, [history, token]);
 
   return (
     <div className="mentorContent my-5">

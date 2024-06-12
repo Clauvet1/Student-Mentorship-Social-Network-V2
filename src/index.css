@@ -34,10 +34,24 @@ h1, h2, h3, h4, h5{
 }
 #navMore{
   border-left: 2px rgba(0, 0, 0, 0.105) solid;
-  margin: auto;
+  padding-left: 1em;
+}
+.profile{
+  border-radius: 15px;
+}
+.profileIMG{
+  margin: 0 auto;
+  border-radius: 2em;
+  width: 1.5em;
+  height: 3vh;
+  overflow: hidden;
+  cursor: pointer;
+}
+#success{
+  width: 10em;
 }
 li{
-  padding: 0 10px;
+  padding: 0 6px;
 }
 #signUp{
   border: 2px var(--background-color) solid;
@@ -49,6 +63,22 @@ li{
   background-color: var(--background-color);
   color: white;
   border: 2px white solid;
+}
+.logout-icon{
+  width: 10em;
+  cursor: pointer;
+}
+#profile-name{
+  color: var(--tertiaryBg-color);
+  
+}
+#profile-name span{
+  color: black;
+  font-size: small;
+}
+.logout{
+  display: flex;
+  padding: 0 2em;
 }
 #logout{
   color: var(--background-color);
@@ -263,9 +293,7 @@ p{
   border-radius: 50%;
   box-shadow: 2px 2px 4px var(--primary-color);
 }
-.content5{
-  width: 65%;
-}
+
 h6 span{
   color: var(--background-color);
 }
@@ -346,8 +374,9 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
-  background-color: rgba(0, 0, 0, 0.045); 
+  overflow: hidden;
+  padding: 4em 0;
+  background-color: #F9FAFF; 
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.455) ;
 
 }
@@ -359,8 +388,13 @@ h1 {
 .user-type {
   display: flex;
   margin-bottom: 20px;
+  width: 9.1em;
+  border-radius: 0.5em;
+  overflow: hidden;
 }
-
+.login-input{
+  margin: 0.3em 5em;
+}
 
 button.active {
   background-color: var(--background-color);
@@ -382,13 +416,16 @@ button {
   padding: 10px;
   border: none;
   margin: 2em;
-  background-color: #118578;
+  background-color: #4d7bb6;
   color: #fff;
   cursor: pointer;
 }
 .loginLinks{
-  color: #118578;
+  color: #4d7bb6;
   font-weight: bold;
+}
+#lim{
+  box-shadow: 10px 15px 14px var(--background-color);  
 }
 
 /* For the FAQ */
@@ -676,7 +713,8 @@ textarea {
 
 .chat-body {
   padding: 20px;
-  height: 40vh;
+  height: 60vh;
+  overflow: scroll;
 }
 
 .messages {

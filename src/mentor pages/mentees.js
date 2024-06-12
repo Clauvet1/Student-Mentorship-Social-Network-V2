@@ -4,14 +4,21 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import profileA from '../assets/images/consultancy.png';
 import profileB from '../assets/images/mentorship.png';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const menteeImages = [profileA, profileB];
 
 const Mentees = () => {
 const [menteeData, setMenteeData] = useState([]);
 const [error, setError] = useState(null);
+const history = useHistory();
+const token = localStorage.getItem('token');
+
 
 useEffect(() => {
+  if(!token){
+    history.push('./login');
+  }
   const fetchMenteeData = async () => {
     try {
       const response = await fetch('http://localhost:3001/api/mentees');
@@ -27,7 +34,7 @@ useEffect(() => {
   };
 
   fetchMenteeData();
-}, []);
+}, [history, token]);
 
   return (
     <div className="main">

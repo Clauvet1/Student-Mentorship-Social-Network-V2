@@ -3,11 +3,12 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import React, { useContext } from "react";
 import { UserContext } from "./Usercontext";
+import loginImage from "./assets/images/loginp.png"
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userType, setUserType] = useState("mentor");
+  const [userType, setUserType] = useState("mentors");
   const history = useHistory();
   const { login } = useContext(UserContext);
   
@@ -54,38 +55,30 @@ const Login = () => {
 
   return (
     <center>
-      <div className="login-container rounded-5 mb-4 col-lg-4 col-md-6 col-sm-9">
+      <div className="login-container rounded-5 mb-4 col-lg-8 col-md-6 col-sm-9">
+      <div className="row w-100 ">
+      <div className="col-lg-6">
+          <img className="w-100" src={loginImage} />
+      </div>
+      <div className="col-lg-6">
         <h1>Login</h1>
         <div className="user-type">
-          <button
-            className={userType === "mentors"? "active" : ""}
-            onClick={() => handleUserTypeChange("mentors")}
-          >
+          <button className={userType === "mentors"? "active" : ""} onClick={() => handleUserTypeChange("mentors")}>
             Mentor
           </button>
-          <button
-            className={userType === "mentees"? "active" : ""}
-            onClick={() => handleUserTypeChange("mentees")}
-          >
+          <button className={userType === "mentees"? "active" : ""} onClick={() => handleUserTypeChange("mentees")}>
             Mentee
           </button>
         </div>
+        
         <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            placeholder="Email"
-          />
-          <input
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            placeholder="Password"
-          />
-          <button className="m-2 px-5 rounded-5" type="submit">
-            Signup as {userType}
+          <input className="login-input" type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="clauvet@gmail.com"/>
+          <input className="login-input" type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Password"/>
+          <center>
+          <button className="m-2 w-50 px-5 rounded-2" type="submit">
+            LogIn as {userType}
           </button>
+          </center>
         </form>
         <div className="py-3">
           <Link className="loginLinks" to="/signUp">
@@ -96,6 +89,8 @@ const Login = () => {
             Sign Up as either mentee or mentor
           </Link>
         </div>
+        </div>
+      </div>
       </div>
     </center>
   );
